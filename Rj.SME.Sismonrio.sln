@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0- Apresentation", "0- Apresentation", "{9E0BC5F7-53F6-4EB4-B03F-EE03563D76F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- App", "1- App", "{91953147-9D1E-4B9E-8C5B-6C02B17AF5D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- Services", "2- Services", "{81F5FDA7-2F3A-43C6-97C9-F7BDA24BCDE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- Domain", "3- Domain", "{B1FAB3B1-598A-4531-A8CB-A29F0B1C3947}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5- Infra", "5- Infra", "{4A5C8350-425A-4276-85B4-8780D9CF8FA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Data", "4 - Data", "{CDC99A81-C555-4C91-99B0-8D887D348087}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rj.SME.Sismonrio.Repository", "Rj.SME.Sismonrio.Repositories\Rj.SME.Sismonrio.Repository.csproj", "{E7E082EE-D7ED-47E4-9ED3-0D84B9DDD9EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rj.SME.Sismonrio.IOC", "Rj.SME.Sismonrio.IOC\Rj.SME.Sismonrio.IOC.csproj", "{1E84C19F-BCE7-493C-B0AD-C8FE7A782EB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rj.SME.Sismonrio.Identity", "Rj.SME.Sismonrio.Identity\Rj.SME.Sismonrio.Identity.csproj", "{6FB4B0FF-7457-4F7A-AE0C-2D00D99BB6E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rj.SME.Sismonrio.Domain", "Rj.SME.Sismonrio.Domain\Rj.SME.Sismonrio.Domain.csproj", "{4CC0E530-636D-43CB-838A-84E23C39C5D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rj.SME.Sismonrio.Service", "Rj.SME.Sismonrio.Service\Rj.SME.Sismonrio.Service.csproj", "{49C48664-D0F0-4CFE-9A52-660DE929D8BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7E082EE-D7ED-47E4-9ED3-0D84B9DDD9EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7E082EE-D7ED-47E4-9ED3-0D84B9DDD9EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7E082EE-D7ED-47E4-9ED3-0D84B9DDD9EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7E082EE-D7ED-47E4-9ED3-0D84B9DDD9EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E84C19F-BCE7-493C-B0AD-C8FE7A782EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E84C19F-BCE7-493C-B0AD-C8FE7A782EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E84C19F-BCE7-493C-B0AD-C8FE7A782EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E84C19F-BCE7-493C-B0AD-C8FE7A782EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB4B0FF-7457-4F7A-AE0C-2D00D99BB6E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB4B0FF-7457-4F7A-AE0C-2D00D99BB6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB4B0FF-7457-4F7A-AE0C-2D00D99BB6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB4B0FF-7457-4F7A-AE0C-2D00D99BB6E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CC0E530-636D-43CB-838A-84E23C39C5D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CC0E530-636D-43CB-838A-84E23C39C5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CC0E530-636D-43CB-838A-84E23C39C5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CC0E530-636D-43CB-838A-84E23C39C5D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49C48664-D0F0-4CFE-9A52-660DE929D8BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49C48664-D0F0-4CFE-9A52-660DE929D8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49C48664-D0F0-4CFE-9A52-660DE929D8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49C48664-D0F0-4CFE-9A52-660DE929D8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7E082EE-D7ED-47E4-9ED3-0D84B9DDD9EA} = {CDC99A81-C555-4C91-99B0-8D887D348087}
+		{1E84C19F-BCE7-493C-B0AD-C8FE7A782EB5} = {4A5C8350-425A-4276-85B4-8780D9CF8FA0}
+		{6FB4B0FF-7457-4F7A-AE0C-2D00D99BB6E6} = {4A5C8350-425A-4276-85B4-8780D9CF8FA0}
+		{4CC0E530-636D-43CB-838A-84E23C39C5D7} = {B1FAB3B1-598A-4531-A8CB-A29F0B1C3947}
+		{49C48664-D0F0-4CFE-9A52-660DE929D8BB} = {81F5FDA7-2F3A-43C6-97C9-F7BDA24BCDE0}
+	EndGlobalSection
+EndGlobal
