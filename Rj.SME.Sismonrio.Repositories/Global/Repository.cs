@@ -7,12 +7,12 @@ using System.Linq.Expressions;
 
 namespace Rj.SME.Sismonrio.Repositories.Global
 {
-    using Domain.Contracts.Infra.Data;
-    using Domain.Contracts;    
+    using Domain.Contracts;
     using Domain.Filters;
     using Context;
+    using Domain.Contracts.Data.Global;
 
-    public class Repository<T,F> : IRepository<T,F>
+    public class Repository<T, F> : IRepository<T, F>
         where T : class, IEntity
         where F : Filter, new()
     {
@@ -24,26 +24,26 @@ namespace Rj.SME.Sismonrio.Repositories.Global
             _db = context.GetDbContext();
             _dbSet = _db.Set<T>();
         }
-
-        public void Add( T entity)
+               
+        public void Add(T entity)
         {
             _dbSet.Add(entity);
         }
 
-        public void Update(  T entity)
+        public void Update(T entity)
         {
-            var old = _dbSet.Where(x => x.Id == entity.Id).SingleOrDefault();            
+            var old = _dbSet.Where(x => x.Id == entity.Id).SingleOrDefault();
             _db.Entry(old).CurrentValues.SetValues(entity);
             _db.ChangeObjectState(entity, EntityState.Modified);
         }
 
-        public virtual void Delete( int id)
+        public virtual void Delete(int id)
         {
             // Exclusão lógica
             var entity = _dbSet.Find(id);
-            entity.Excluido = true;            
+            entity.Excluido = true;
             _db.Entry(entity).CurrentValues.SetValues(entity);
-            _db.ChangeObjectState(entity, EntityState.Modified);            
+            _db.ChangeObjectState(entity, EntityState.Modified);
         }
 
         public T GetById(int id)
@@ -121,5 +121,5 @@ namespace Rj.SME.Sismonrio.Repositories.Global
             GC.SuppressFinalize(this);
         }
 
-    }    
+    }
 }

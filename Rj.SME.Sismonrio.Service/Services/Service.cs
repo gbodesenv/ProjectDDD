@@ -2,9 +2,10 @@
 namespace Rj.SME.Sismonrio.Service.Services
 {
     using Domain.Contracts.Infra.Data;
+    using Domain.Exceptions;
     using Domain.Validation;
+    using Domain.Resources;
     using NLog;
-    using NLogger;
     using System;
 
     public abstract class Service : BusinessValidation
