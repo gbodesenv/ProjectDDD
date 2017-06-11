@@ -4,9 +4,10 @@ using System.Linq.Expressions;
 
 namespace Rj.SME.Sismonrio.Domain.Contracts.Data.Global
 {
+    using Filters;
     public interface IRepository<T, F> : IDisposable
         where T : class //entidade
-        where F : class //filter
+        where F : Filter //filter
     {
         void Add(T entity);
 

@@ -36,6 +36,7 @@
     <Compile Include="Contracts\Data\Global\IUnitOfWork.cs" />
     <Compile Include="Contracts\Services\IUsuarioService.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Enums\PerfilEnum.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Exceptions\ServiceException.cs" />
     <Compile Include="Exceptions\ValidationException.cs" />
@@ -47,6 +48,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MensagensErro.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\MensagensValidacao.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MensagensValidacao.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\Arquivo.cs" />
+    <Compile Include="Util\ArquivoMemoria.cs" />
+    <Compile Include="Util\ExtensionMethods\BooleanExtension.cs" />
+    <Compile Include="Util\ExtensionMethods\DateTimeExtension.cs" />
+    <Compile Include="Util\ExtensionMethods\DecimalExtension.cs" />
+    <Compile Include="Util\ExtensionMethods\Formatacao.cs" />
+    <Compile Include="Util\ExtensionMethods\ICollectionExtension.cs" />
+    <Compile Include="Util\ExtensionMethods\IEnumerableExtension.cs" />
+    <Compile Include="Util\ExtensionMethods\IntegerExtension.cs" />
+    <Compile Include="Util\ExtensionMethods\MvcExtensions.cs" />
+    <Compile Include="Util\ExtensionMethods\ObjectExtension.cs" />
+    <Compile Include="Util\ExtensionMethods\StreamExtension.cs" />
+    <Compile Include="Util\ExtensionMethods\StringExtension.cs" />
+    <Compile Include="Util\ExtensionMethods\TimeSpanExtension.cs" />
+    <Compile Include="Util\Helpers\EnumHelper.cs" />
+    <Compile Include="Util\Helpers\UrlUtil.cs" />
     <Compile Include="Validation\BusinessValidation.cs" />
     <Compile Include="Validation\BusinessValidationResult.cs" />
     <Compile Include="Validation\ValidationResultsManager.cs" />
@@ -62,19 +84,23 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\Infra\Identity\" />
     <Folder Include="Contracts\Infra\IOC\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\MensagensErro.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MensagensErro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MensagensValidacao.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MensagensValidacao.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

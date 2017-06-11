@@ -6,5 +6,6 @@
 
     public interface IUsuarioRepository : IRepository<Usuario, UsuarioFilter>
     {
+        bool ValidarUsuario(string email, string senha);
     }
 }
