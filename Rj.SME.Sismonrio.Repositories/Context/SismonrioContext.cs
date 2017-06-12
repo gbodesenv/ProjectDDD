@@ -1,15 +1,15 @@
-﻿using Rj.SME.Sismonrio.Repositories.Mappings;
-using System;
+﻿using System;
+using System.Linq;
 using System.Data.Common;
 using System.Data.Entity;
+using System.Reflection;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Reflection;
-
 
 namespace Rj.SME.Sismonrio.Repositories.Context
-{   
+{
+    using Mappings;
+
     public class SismonrioContext : DbContext 
     {
 

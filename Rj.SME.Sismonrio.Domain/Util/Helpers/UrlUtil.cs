@@ -1,4 +1,7 @@
-﻿namespace Rj.SME.Sismonrio.Domain.Util.Helpers
+﻿using System.Web.Mvc;
+using System.Web.Routing;
+
+namespace Rj.SME.Sismonrio.Domain.Util.Helpers
 {
     public class UrlUtil
     {
