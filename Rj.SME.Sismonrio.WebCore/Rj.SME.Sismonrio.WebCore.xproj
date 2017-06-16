@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>7331d716-6138-44b1-8606-f23fcc5918c3</ProjectGuid>
+    <ProjectGuid>759fc099-05a5-46c4-9d45-ade958132fb2</ProjectGuid>
     <RootNamespace>Rj.SME.Sismonrio.WebCore</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
