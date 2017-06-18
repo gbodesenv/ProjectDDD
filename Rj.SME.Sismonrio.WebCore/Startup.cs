@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +6,15 @@ using Microsoft.Extensions.Logging;
 
 namespace Rj.SME.Sismonrio.WebCore
 {
+    using Domain.Contracts.Data.Repositories;
+    using Domain.Contracts.Infra.Data;
+    using Domain.Contracts.Services;    
+    using NonFactors.Mvc.Grid;
+    using Repositories.Context;
+    using Repositories.Global;
+    using Repositories.Repositories;
+    using Service.Services;
+
     public class Startup
     {
         public Startup(IHostingEnvironment env)
@@ -36,7 +41,13 @@ namespace Rj.SME.Sismonrio.WebCore
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
+            services.AddSingleton<IUnitOfWork, UnitOfWork>();
+            services.AddSingleton<IContextFactory, ContextFactory>();
+            services.AddSingleton<IUsuarioRepository, UsuarioRepository>();
+            services.AddSingleton<IUsuarioService, UsuarioService>();
+
             services.AddMvc();
+            services.AddMvcGrid();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +56,7 @@ namespace Rj.SME.Sismonrio.WebCore
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseApplicationInsightsRequestTelemetry();
+            //app.UseApplicationInsightsRequestTelemetry();
 
             if (env.IsDevelopment())
             {
@@ -57,7 +68,8 @@ namespace Rj.SME.Sismonrio.WebCore
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseApplicationInsightsExceptionTelemetry();
+            //app.UseApplicationInsightsExceptionTelemetry();
+            app.UseMvcWithDefaultRoute();
 
             app.UseStaticFiles();
 

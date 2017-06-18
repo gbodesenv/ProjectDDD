@@ -37,6 +37,11 @@
     <Compile Include="Global\UnitOfWork.cs" />
     <Compile Include="Mappings\IMapping.cs" />
     <Compile Include="Mappings\UsuarioMap.cs" />
+    <Compile Include="Migrations\201706181746464_CreateDB_TUsuario.cs" />
+    <Compile Include="Migrations\201706181746464_CreateDB_TUsuario.Designer.cs">
+      <DependentUpon>201706181746464_CreateDB_TUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
   </ItemGroup>
@@ -63,15 +68,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Rj.SME.Sismonrio.Domain\Rj.SME.Sismonrio.Domain.csproj">
       <Project>{4cc0e530-636d-43cb-838a-84e23c39c5d7}</Project>
       <Name>Rj.SME.Sismonrio.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706181746464_CreateDB_TUsuario.resx">
+      <DependentUpon>201706181746464_CreateDB_TUsuario.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

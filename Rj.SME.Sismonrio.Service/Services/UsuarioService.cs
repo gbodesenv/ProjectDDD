@@ -12,9 +12,11 @@
     {
         private readonly IUsuarioRepository _usuarioRepositorio;
 
-        public UsuarioService(IUnitOfWork uow) 
+        public UsuarioService(IUnitOfWork uow,
+            IUsuarioRepository usuarioRepository) 
             : base(uow)
         {
+            _usuarioRepositorio = usuarioRepository;
         }
 
         public Usuario Buscar(int id)
@@ -34,7 +36,7 @@
 
         public IEnumerable<Usuario> ListarGrid(UsuarioFilter filtro)
         {
-            throw new NotImplementedException();
+            return _usuarioRepositorio.All();
         }
 
         public void Salvar(Usuario entidade)

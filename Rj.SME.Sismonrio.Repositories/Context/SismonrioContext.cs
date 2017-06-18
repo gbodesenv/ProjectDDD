@@ -8,24 +8,27 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Rj.SME.Sismonrio.Repositories.Context
 {
+    using Domain.Entities;
     using Mappings;
 
-    public class SismonrioContext : DbContext 
+    public class SismonrioContext : DbContext
     {
-
         public SismonrioContext()
-            : base("name=SismonrioConnection")
+       : base("name=SismonrioConnection")
         {
-            this.Configuration.ProxyCreationEnabled = false;
-            this.Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
+            Configuration.LazyLoadingEnabled = false;
         }
 
         public SismonrioContext(DbConnection connection)
-            : base(connection, true)
+        : base(connection, true)
         {
             Database.Initialize(false);
         }
-
+        
+        public DbSet<Usuario> Usuario { get; set; }
+   
+            
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

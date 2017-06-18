@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>759fc099-05a5-46c4-9d45-ade958132fb2</ProjectGuid>
+    <ProjectGuid>0eba2536-e051-4289-8bdc-88e40ee698bb</ProjectGuid>
     <RootNamespace>Rj.SME.Sismonrio.WebCore</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
@@ -18,6 +18,11 @@
   <ItemGroup>
     <DnxInvisibleContent Include="bower.json" />
     <DnxInvisibleContent Include=".bowerrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rj.SME.Sismonrio.Domain\Rj.SME.Sismonrio.Domain.csproj" />
+    <ProjectReference Include="..\Rj.SME.Sismonrio.Repositories\Rj.SME.Sismonrio.Repository.csproj" />
+    <ProjectReference Include="..\Rj.SME.Sismonrio.Service\Rj.SME.Sismonrio.Service.csproj" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>
