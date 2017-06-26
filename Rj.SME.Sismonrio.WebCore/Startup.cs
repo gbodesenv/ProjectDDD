@@ -8,10 +8,11 @@ namespace Rj.SME.Sismonrio.WebCore
 {
     using Domain.Contracts.Data.Repositories;
     using Domain.Contracts.Infra.Data;
-    using Domain.Contracts.Services;
-    using Repositories.Repositories;
+    using Domain.Contracts.Services;    
+    using NonFactors.Mvc.Grid;
     using Repositories.Context;
     using Repositories.Global;
+    using Repositories.Repositories;
     using Service.Services;
 
     public class Startup
@@ -20,9 +21,15 @@ namespace Rj.SME.Sismonrio.WebCore
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+
+            if (env.IsDevelopment())
+            {
+                // This will push telemetry data through Application Insights pipeline faster, allowing you to view results immediately.
+                builder.AddApplicationInsightsSettings(developerMode: true);
+            }
             Configuration = builder.Build();
         }
 
@@ -31,16 +38,16 @@ namespace Rj.SME.Sismonrio.WebCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<BloggingContext>(options =>
-            //options.UseSqlServer(Configuration.GetConnectionString("SismonrioConnection")));
+            // Add framework services.
+            services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddSingleton<IUnitOfWork, UnitOfWork>();
             services.AddSingleton<IContextFactory, ContextFactory>();
             services.AddSingleton<IUsuarioRepository, UsuarioRepository>();
-            services.AddScoped<IUsuarioService, UsuarioService>();
-            
-            // Add framework services.
+            services.AddSingleton<IUsuarioService, UsuarioService>();
+
             services.AddMvc();
+            services.AddMvcGrid();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +55,8 @@ namespace Rj.SME.Sismonrio.WebCore
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            //app.UseApplicationInsightsRequestTelemetry();
 
             if (env.IsDevelopment())
             {
@@ -58,6 +67,9 @@ namespace Rj.SME.Sismonrio.WebCore
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            //app.UseApplicationInsightsExceptionTelemetry();
+            app.UseMvcWithDefaultRoute();
 
             app.UseStaticFiles();
 

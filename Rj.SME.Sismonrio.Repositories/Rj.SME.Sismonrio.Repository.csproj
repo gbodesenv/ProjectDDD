@@ -37,9 +37,9 @@
     <Compile Include="Global\UnitOfWork.cs" />
     <Compile Include="Mappings\IMapping.cs" />
     <Compile Include="Mappings\UsuarioMap.cs" />
-    <Compile Include="Migrations\201706221312047_initial.cs" />
-    <Compile Include="Migrations\201706221312047_initial.Designer.cs">
-      <DependentUpon>201706221312047_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201706181746464_CreateDB_TUsuario.cs" />
+    <Compile Include="Migrations\201706181746464_CreateDB_TUsuario.Designer.cs">
+      <DependentUpon>201706181746464_CreateDB_TUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,8 +80,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706221312047_initial.resx">
-      <DependentUpon>201706221312047_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706181746464_CreateDB_TUsuario.resx">
+      <DependentUpon>201706181746464_CreateDB_TUsuario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
