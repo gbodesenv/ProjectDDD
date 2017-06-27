@@ -4,6 +4,13 @@
     <TargetFramework>net47</TargetFramework>
     <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\lib\angular\**" />
+    <Content Remove="wwwroot\lib\angular\**" />
+    <EmbeddedResource Remove="wwwroot\lib\angular\**" />
+    <None Remove="wwwroot\lib\angular\**" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
@@ -23,6 +30,9 @@
     <ProjectReference Include="..\Rj.SME.Sismonrio.Domain\Rj.SME.Sismonrio.Domain.csproj" />
     <ProjectReference Include="..\Rj.SME.Sismonrio.Repositories\Rj.SME.Sismonrio.Repository.csproj" />
     <ProjectReference Include="..\Rj.SME.Sismonrio.Service\Rj.SME.Sismonrio.Service.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App\main\" />
   </ItemGroup>
 
 </Project>

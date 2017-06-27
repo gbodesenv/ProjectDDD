@@ -1,0 +1,1 @@
+{"version":3,"sources":["main/main.ts"],"names":[],"mappings":";;AAAA,8DAAsD;AACtD,iDAA4C;AAE5C,4BAAS,CAAC,4BAAY,CAAC,CAAC","file":"main.js","sourcesContent":["import {bootstrap}    from '@angular/platform-browser'\r\nimport {AppComponent} from './app.component'\r\n\r\nbootstrap(AppComponent);"]}

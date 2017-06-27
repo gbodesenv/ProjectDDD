@@ -1,0 +1,1 @@
+{"version":3,"sources":["main/app.service.ts"],"names":[],"mappings":";;AAAA;IAAA;IAIA,CAAC;IAHG,4BAAO,GAAP;QACI,MAAM,CAAC,gBAAgB,CAAC;IAC5B,CAAC;IACL,iBAAC;AAAD,CAJA,AAIC,IAAA;AAJY,gCAAU","file":"app.service.js","sourcesContent":["export class AppService {\r\n    getNome() {\r\n        return 'Macoratti .net';\r\n    }\r\n}"]}
