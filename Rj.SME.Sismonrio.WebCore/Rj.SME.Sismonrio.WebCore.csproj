@@ -11,6 +11,26 @@
     <EmbeddedResource Remove="wwwroot\lib\angular\**" />
     <None Remove="wwwroot\lib\angular\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="gulpfile.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\App\app.module.js" />
+    <Content Include="wwwroot\App\app.module.js.map" />
+    <Content Include="wwwroot\App\app.module.ts" />
+    <Content Include="wwwroot\App\Index\app.component.html" />
+    <Content Include="wwwroot\App\Index\app.component.js" />
+    <Content Include="wwwroot\App\Index\app.component.js.map" />
+    <Content Include="wwwroot\App\Index\app.component.service.js" />
+    <Content Include="wwwroot\App\Index\app.component.service.js.map" />
+    <Content Include="wwwroot\App\Index\app.component.service.ts" />
+    <Content Include="wwwroot\App\Index\app.component.ts" />
+    <Content Include="wwwroot\App\main.js" />
+    <Content Include="wwwroot\App\main.js.map" />
+    <Content Include="wwwroot\App\main.ts" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
@@ -20,6 +40,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="2.2.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
   </ItemGroup>
@@ -32,7 +53,10 @@
     <ProjectReference Include="..\Rj.SME.Sismonrio.Service\Rj.SME.Sismonrio.Service.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\main\" />
+    <Folder Include="wwwroot\lib\node\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\App\systemjs.config.js" />
   </ItemGroup>
 
 </Project>

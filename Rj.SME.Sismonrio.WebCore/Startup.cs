@@ -13,6 +13,8 @@ namespace Rj.SME.Sismonrio.WebCore
     using Repositories.Context;
     using Repositories.Global;
     using Service.Services;
+    using Microsoft.Extensions.FileProviders;
+    using System.IO;
 
     public class Startup
     {
@@ -38,7 +40,11 @@ namespace Rj.SME.Sismonrio.WebCore
             services.AddSingleton<IContextFactory, ContextFactory>();
             services.AddSingleton<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IUsuarioService, UsuarioService>();
-            
+
+
+
+            services.AddDirectoryBrowser();
+
             // Add framework services.
             services.AddMvc();
         }
@@ -60,6 +66,13 @@ namespace Rj.SME.Sismonrio.WebCore
             }
 
             app.UseStaticFiles();
+
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+           Path.Combine(Directory.GetCurrentDirectory(), @"node_modules")),
+                RequestPath = new Microsoft.AspNetCore.Http.PathString("/Node_Modules")
+            });
 
             app.UseMvc(routes =>
             {

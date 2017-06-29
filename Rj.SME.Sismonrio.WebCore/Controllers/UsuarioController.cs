@@ -16,5 +16,10 @@ namespace Rj.SME.Sismonrio.WebCore.Controllers
         {
             return View(_usuarioService.ListarGrid(new Domain.Filters.UsuarioFilter()));
         }
+
+        public IActionResult VisualizarUsuario()
+        {
+            return View();
+        }
     }
 }

@@ -10,31 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var app_service_1 = require("./app.service");
-var AppComponent = (function () {
-    function AppComponent(_appService) {
+var app_component_service_1 = require("./app.component.service");
+var MeuPrimeiroComponent = (function () {
+    function MeuPrimeiroComponent(_appService) {
         this._appService = _appService;
         this.titulo = 'Angular 2';
         this.mensagem = '';
         this.nome = '';
         this.getNomeInicial();
     }
-    AppComponent.prototype.getNomeInicial = function () {
+    MeuPrimeiroComponent.prototype.getNomeInicial = function () {
         this.nome = this._appService.getNome();
     };
-    AppComponent.prototype.onClickMe = function () {
-        this.mensagem = "Macoratti .net - quase tudo para .NET";
+    MeuPrimeiroComponent.prototype.onClickMe = function () {
+        this.mensagem = "clica em mim teste gabigol";
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'meu-app',
-            template: "\n         {{titulo }}\n         <p>\n         Nome : <input [(ngModel)] = \"nome\" >\n         <p>\n         {{nome}}\n         <p>\n         <button (click)= \"onClickMe()\">Clique Aqui</button>\n         <p>\n         {{mensagem}}\n\n    ",
-            providers: [app_service_1.AppService]
-        }),
-        __metadata("design:paramtypes", [app_service_1.AppService])
-    ], AppComponent);
-    return AppComponent;
+    return MeuPrimeiroComponent;
 }());
-exports.AppComponent = AppComponent;
-
+MeuPrimeiroComponent = __decorate([
+    core_1.Component({
+        selector: 'meu-app',
+        templateUrl: "App/Index/app.component.html",
+        providers: [app_component_service_1.AppService]
+    }),
+    __metadata("design:paramtypes", [app_component_service_1.AppService])
+], MeuPrimeiroComponent);
+exports.MeuPrimeiroComponent = MeuPrimeiroComponent;
 //# sourceMappingURL=app.component.js.map

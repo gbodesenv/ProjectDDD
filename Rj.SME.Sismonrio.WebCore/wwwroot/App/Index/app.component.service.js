@@ -4,10 +4,9 @@ var AppService = (function () {
     function AppService() {
     }
     AppService.prototype.getNome = function () {
-        return 'Macoratti .net';
+        return 'gabigol teste';
     };
     return AppService;
 }());
 exports.AppService = AppService;
-
-//# sourceMappingURL=app.service.js.map
+//# sourceMappingURL=app.component.service.js.map

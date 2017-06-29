@@ -6,7 +6,253 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Rj.SME.Sismonrio.WebCore</title>
 
-    <environment names="Development">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+    <link rel="stylesheet" href="~/css/geral.css" />
+
+    @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+<body>
+
+
+
+    <!-- CABEÇALHO, LOGO, TÍTULO SISTEMA-->
+    <div class="header">
+        <div class="logoCab clickVoltaPaginaInicial"></div>
+        <div class="logoTituloCab hidden-xs clickVoltaPaginaInicial">
+            <label class="clickVoltaPaginaInicial">SME - Sistema de Monitoramento para Educação Infantil </label>
+        </div>
+        <div class="barraUsuario">
+            <label class="lbl_usr" data-original-title="Usuário do Sistema">Gabriel Oliveira</label>
+            <label class="lbl_funcao" data-original-title="Usuário do Sistema"> Desenvolvedor .NET / Porto Alegre - RS</label>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cadastros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Formulários</a>
+                </li>
+                @*<li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>*@
+            </ul>
+        </div>
+    </nav>
+
+    @*<nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand visible-xs-block" href="#">Menu</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right icones">
+                        <li class='dropdown'><a class='dropdown-toggle' href='#'><span>Teste&nbsp;</span><span class='caret'></span></a><ul class='dropdown-menu'>Teste 2</ul></li>
+
+
+                        @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+
+
+
+
+
+                        <li id="notification_li">
+                            <span id="notification_count" data-bind="text: $root.contador, attr: { class: $root.notificationCountClass }, visible: $root.contador() > 0"></span>
+                            <a href="#" id="notificationLink" class="fa fa-bell" data-toggle="tooltip" title="Notificações"></a>
+                            <div id="notificationContainer">
+                                <div id="notificationTitle">Notificações</div>
+                                <div id="notificationsBody" class="notifications">
+                                    <!--ko if: ($root.ListaNotificacoes().length > 0)-->
+                                    <ul class="notificacoes" data-bind="foreach: $root.ListaNotificacoes">
+                                        <!--ko if: ($index() <= 9)-->
+                                        <li data-bind="text: Mensagem, attr: { class: NaoLidoClass }, click: function() { controllerNotificacao.AtualizarMensagemLida(namespaceNotificacao, $index()) } "></li>
+                                        <!--/ko-->
+                                    </ul>
+                                    <!--/ko-->
+                                    <!--ko if: ($root.ListaNotificacoes().length == 0)-->
+                                    <ul style="height:33px" class="notificacoes">
+                                        <li style="text-align: center" data-bind="text: 'Não há novas notificações.'"></li>
+                                    </ul>
+                                    <!--/ko-->
+                                    <div id="notificationFooter"><a href="@Url.Action("Listar", "Notificacao")">Ver Todas</a></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a data-toggle="tooltip" title="Trocar a Unidade Gestora" href="@Url.Action("TrocarUnidadeGestora", "Home")" class="fa fa-exchange"></a></li>
+                        @Html.Hidden("hdnUrlTrocarUnidadeGestora", Url.Action("TrocarUnidadeGestora"))
+                        @*<li><a title="Voltar para a Página Inicial" href="@Url.Action("Inicial","Home")" class="icoHome"></a></li>
+                        <li><a data-toggle="tooltip" href="javascript:void(0);" title="Sair do Sistema" url='@Url.Action("Deslogar", "Home")' id="btnSairSistema" class="fa fa-sign-out"></a></li>
+                        @Html.Hidden("hdnUrlDeslogar", Url.Action("Deslogar", "Home"))
+                    </ul>
+                </div>
+            </div>
+        </nav>*@
+
+
+    @*<div title="Tempo restante de sessão" id="contadorSessao" class="contadorSessao">
+            <i class="fa fa-clock-o"></i>&nbsp;<label id="timerContadorSessao">1m 57s</label>
+        </div>*@
+
+    @*@Html.Hidden("HdnTimeoutSession", SessionStateTempDataProvider.Timeout)*@
+
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/tether/dist/js/tether.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    @RenderSection("Scripts", required: false)
+    <!-- Polyfill(s) for older browsers -->
+    <script src="~/lib/node/shim.min.js"></script>
+    <script src="~/lib/node/zone.js"></script>
+    <script src="~/lib/node/system.src.js"></script>
+    <script src="~/App/systemjs.config.js"></script>
+    <script>
+        System.import('/App/main').catch(function (err) {
+            console.error(err);
+        });
+    </script>
+
+    @*<script>
+          $(function () {
+
+              $("#btnSairSistema").click(function () {
+                  $.ajax({
+                      cache: false,
+                      data: null,
+                      type: 'POST',
+                      dataType: "json",
+                      contentType: "application/json; charset=utf-8",
+                      url: $("#hdnUrlDeslogar").val(),
+                      success: function (data) {
+                          App.Util.TratarRetorno(data, function () {
+                              window.onbeforeunload = null;
+                              window.location = data.url;
+                          });
+                      }
+                  });
+              });
+          });
+    </script>
+
+    <script>
+        $(function () {
+            window.prettyPrint && prettyPrint();
+            $('.nav-tabs:first').tabdrop();
+            $('.nav-tabs:last').tabdrop({ text: 'Mais' });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(document).one("ajaxStop", function () {
+                setTimeout(function () {
+                    if (location.hash) {
+                        setTimeout(function () {
+                            $('a[href=' + location.hash + ']').tab('show').trigger('click');
+                        }, 300);
+                    }
+                }, 300);
+            });
+
+            $(window).on("beforeunload", function (event) {
+                $.ajax({
+                    type: 'POST',
+                    data: JSON.stringify({ hash: location.hash }),
+                    url: UrlAction("Base/SalvarHashPagina"),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    async: false
+                });
+            });
+
+            $(document.body).on("click", "a[data-toggle='tab']", function (event) {
+                var baseUrl = window.location.href.split('#')[0];
+                window.location.replace(baseUrl + this.getAttribute("href"));
+            });
+        });
+
+    </script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                return false;
+            });
+
+            $(document).mouseup(function (e) {
+
+                var container = $("#notificationContainer");
+                var containerLink = $("#notificationLink");
+
+                if ((!container.is(e.target) && container.has(e.target).length === 0) &&
+                    (!containerLink.is(e.target) && containerLink.has(e.target).length === 0)) {
+                    container.hide();
+                }
+
+            });
+
+            $(".clickVoltaPaginaInicial").click(function () {
+                window.location = UrlAction("Home/Inicial");
+            });
+
+        });
+    </script>*@
+
+
+    <!-- CAMINHO DE PÃO -->
+    @*<div class="breadcrumb">
+            <img src="@Url.Content("~/content/themes/images/icobreadcrumb.png")" class="icobreadcrumb" alt=""><label><a href='@Url.Action("Inicial", "Home", new { area = "" })' title="Tela Inicial" target="_top">Home</a></label>
+           <label><a href='@Url.Action("Inicial", "Home")' title="Tela Inicial"><i class="icobreadcrumb fa fa-home fa-2x"></i> Home</a></label>
+            @if (IsSectionDefined("SecaoMigalhaPao"))
+            {
+                @RenderSection("SecaoMigalhaPao")
+            }
+        </div>*@
+    @*<div class="conteudo-container" id="divCorpoPagina">
+        <div class="conteudo-iframe container home">
+            <div class="home">*@
+                @RenderBody()
+            @*</div>
+        </div>
+    </div>*@
+
+    <div id="divCarregando" class="alert load" style="display:none;">
+        <div id="carregando">
+            <label class="center">Aguarde, CARREGANDO...</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="spin large"></i>
+        </div>
+    </div>
+
+  
+</body>
+
+</html>
+
+
+
+@*ENVIROMENT*@
+@*<environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
@@ -15,11 +261,35 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>*@
+@*ENVIROMENT*@
+
+
+
+@*ENVIROMENT*@
+@*<environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
-    @Html.Raw(JavaScriptSnippet.FullScript)
-</head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>*@
+@*ENVIROMENT*@
+
+@*<nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -45,29 +315,4 @@
         <footer>
             <p>&copy; 2017 - Rj.SME.Sismonrio.WebCore</p>
         </footer>
-    </div>
-
-    <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
-    @RenderSection("Scripts", required: false)
-</body>
-</html>
+    </div>*@
