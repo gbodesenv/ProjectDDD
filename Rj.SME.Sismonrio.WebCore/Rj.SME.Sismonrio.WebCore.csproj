@@ -53,6 +53,7 @@
     <ProjectReference Include="..\Rj.SME.Sismonrio.Service\Rj.SME.Sismonrio.Service.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="wwwroot\images\layout\" />
     <Folder Include="wwwroot\lib\node\" />
   </ItemGroup>
   <ItemGroup>

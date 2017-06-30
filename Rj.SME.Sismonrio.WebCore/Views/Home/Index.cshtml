@@ -5,7 +5,57 @@
 <div class="container-fluid">
     <!-- Content here -->
 
-    <div class="container">
+    @*<div class="container">*@
+        <div class="formulario">
+            <form action="form.php" id="formulario" method="post">
+                <fieldset id="fieldset1" class="active">
+                    <legend>Informações de Perfil</legend>
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="email" id="email" placeholder="Digite seu email" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha" required />
+                    </div>
+                </fieldset>
+
+                <fieldset id="fieldset2">
+                    <legend>Informações Complementares</legend>
+                    <div class="form-group">
+                        <label>Endereço</label>
+                        <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Digite seu endereço" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Digite seu telefone" required />
+                    </div>
+                </fieldset>
+
+                <div id="buttons">
+                    <button id="voltar" class="btn btn-default hidden" type="button">Voltar</button>
+                    <button id="avancar" class="btn btn-default" type="button">Avançar</button>
+                    <button type="submit" class="btn btn-primary hidden" name="concluir" id="concluir">Concluir</button>
+                </div>
+            </form>
+        </div>
+    @*</div>*@
+
+   
+</div>
+
+@*<meu-app>
+    Loading...
+</meu-app>*@
+
+
+
+
+@*<div class="container">
         <div class="row">
             <div class="col">
                 <form>
@@ -78,17 +128,7 @@
                 </form>
             </div>
         </div>
-    </div>
-</div>
-
-<meu-app>
-    Loading...
-</meu-app>
-
-
-
-
-
+    </div>*@
 
 
 
